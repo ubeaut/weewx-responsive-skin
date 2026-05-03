@@ -1,4 +1,4 @@
-﻿#errorCatcher Echo
+#errorCatcher Echo
 ##
 ## Specifying an encoding of UTF-8 is usually safe, but if your text is 
 ## actually in Latin-1, then you should replace the string "UTF-8" with "latin-1"
@@ -104,6 +104,11 @@
                   #if $year.extraTemp1.has_data
                   <div class="col-xs-12 col-sm-6 col-md-6">
                     <img src="yearextra.png" class="center-block img-responsive" style="padding-bottom: 5px;" alt="$Extras.extraTempsPlotAltText" />
+                  </div>
+                  #end if
+                  #if $year.extraHumid1.has_data
+                  <div class="col-xs-12 col-sm-6 col-md-6">
+                    <img src="yearextra1.png" class="center-block img-responsive" style="padding-bottom: 5px;" alt="$Extras.extraHumidsPlotAltText" />
                   </div>
                   #end if
                 </div>
@@ -243,6 +248,26 @@
                       <tr>
                           <td style="border-top: none;">Low $Extras.extraTemp2Label</td>
                           <td style="border-top: none;">$year.extraTemp2.min at $year.extraTemp2.mintime</td>
+                      </tr>
+                      #end if
+                      #if $year.extraHumid1.has_data
+                      <tr>
+                        <td style="border-bottom: none;">High $Extras.extraHumid1Label</td>
+                        <td style="border-bottom: none;">$year.extraHumid1.max at $year.extraHumid1.maxtime</td>
+                      </tr>
+                      <tr>
+                        <td style="border-top: none;">Low $Extras.extraHumid1Label</td>
+                        <td style="border-top: none;">$year.extraHumid1.min at $year.extraHumid1.mintime</td>
+                      </tr>
+                      #end if
+                      #if $year.extraHumid2.has_data
+                      <tr>
+                          <td style="border-bottom: none;">High $Extras.extraHumid2Label</td>
+                          <td style="border-bottom: none;">$year.extraHumid2.max at $year.extraHumid2.maxtime</td>
+                      </tr>
+                      <tr>
+                          <td style="border-top: none;">Low $Extras.extraHumid2Label</td>
+                          <td style="border-top: none;">$year.extraHumid2.min at $year.extraHumid2.mintime</td>
                       </tr>
                       #end if
                       #if $year.UV.has_data
